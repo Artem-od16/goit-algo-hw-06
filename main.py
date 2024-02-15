@@ -78,17 +78,20 @@ if __name__ == "__main__":
 
     # Print all records in the book
     for name, record in book.data.items():
-        print(record)
+        print(name)
+
+    # Contact name: John, phones: 1234567890; 5555555555
+    # Contact name: Jane, phones: 9876543210
 
     # Find and edit John's phone number
     john = book.find("John")
     john.edit_phone("1234567890", "1112223333")
 
-    print(john)
+    print(john)  # Contact name: John, phones: 1112223333; 5555555555
 
     # Find a specific phone in John's record
     found_phone = john.find_phone("5555555555")
-    print(f"{john.name.value}: {found_phone}")  # Output: 5555555555
+    print(f"{john.name.value}: {found_phone}")  # John: 5555555555
 
     # Delete Jane's record
     book.delete("Jane")
